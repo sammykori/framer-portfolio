@@ -24,10 +24,10 @@ function NavigationMenu() {
                     <Link href="/">HOME</Link>
                 </motion.li>
                 <motion.li variants={staggerChildX}>
-                    <Link href="/">CV</Link>
+                    <Link href="/cv">CV</Link>
                 </motion.li>
                 <motion.li variants={staggerChildX}>
-                    <Link href="/">BLOG</Link>
+                    <Link href="/blog">BLOG</Link>
                 </motion.li>
             </motion.ul>
         </motion.nav>
