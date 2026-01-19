@@ -1,7 +1,7 @@
-'use client'
-import Link from 'next/link'
-import { slideDown, staggerParent, staggerChildX } from '@/motion'
-import { motion } from 'motion/react'
+"use client"
+import Link from "next/link"
+import { slideDown, staggerParent, staggerChildX } from "@/motion"
+import { motion } from "motion/react"
 
 function NavigationMenu() {
     return (

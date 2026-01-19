@@ -1,5 +1,5 @@
-import { experienceData } from '@/data/experience'
-import Job from './Job'
+import { experienceData } from "@/data/experience"
+import Job from "./Job"
 
 function Experience() {
     return (

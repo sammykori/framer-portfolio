@@ -1,5 +1,5 @@
-import { educationData } from '@/data/experience'
-import School from './School'
+import { educationData } from "@/data/experience"
+import School from "./School"
 
 function Education() {
     return (

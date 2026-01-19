@@ -1,5 +1,5 @@
-import { Icon } from '@iconify/react'
-import { educationData } from '@/data/experience'
+import { Icon } from "@iconify/react"
+import { educationData } from "@/data/experience"
 
 type EducationProps = {
     education: (typeof educationData)[0] // Adjust the type according to the structure of your
@@ -21,7 +21,7 @@ function School({ education }: EducationProps) {
                     </h1>
 
                     <h2 className="text-xl">
-                        {education.degree}{' '}
+                        {education.degree}{" "}
                         <span className="italic text-lg">
                             {education.duration}
                         </span>

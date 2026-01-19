@@ -1,5 +1,5 @@
-import { Icon } from '@iconify/react'
-import { experienceData } from '@/data/experience'
+import { Icon } from "@iconify/react"
+import { experienceData } from "@/data/experience"
 
 type JobProps = {
     job: (typeof experienceData)[0] // Adjust the type according to the structure of your
@@ -18,7 +18,7 @@ function Job({ job }: JobProps) {
                 <div className="flex flex-col gap-6">
                     <h1 className="text-3xl underline">{job.role}</h1>
                     <h2 className="text-2xl">
-                        <span className="font-bold">{job.company}</span> -{' '}
+                        <span className="font-bold">{job.company}</span> -{" "}
                         {job.duration}
                     </h2>
                     <ul className="list-disc ml-5 text-2xl flex flex-col gap-4">

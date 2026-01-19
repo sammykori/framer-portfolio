@@ -1,4 +1,4 @@
-import SkillRate from '@/components/cv/SkillRate'
+import SkillRate from "@/components/cv/SkillRate"
 function Skills() {
     return (
         <section className="w-full flex flex-col mt-20">
