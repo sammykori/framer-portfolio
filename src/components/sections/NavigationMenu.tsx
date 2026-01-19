@@ -1,7 +1,7 @@
-"use client"
-import Link from "next/link"
-import { slideDown, staggerParent, staggerChildX } from "@/motion"
-import { motion } from "motion/react"
+'use client'
+import Link from 'next/link'
+import { slideDown, staggerParent, staggerChildX } from '@/motion'
+import { motion } from 'motion/react'
 
 function NavigationMenu() {
     return (
@@ -24,10 +24,10 @@ function NavigationMenu() {
                     <Link href="/">HOME</Link>
                 </motion.li>
                 <motion.li variants={staggerChildX}>
-                    <Link href="/">CV</Link>
+                    <Link href="/cv">CV</Link>
                 </motion.li>
                 <motion.li variants={staggerChildX}>
-                    <Link href="/">BLOG</Link>
+                    <Link href="/blog">BLOG</Link>
                 </motion.li>
             </motion.ul>
         </motion.nav>
