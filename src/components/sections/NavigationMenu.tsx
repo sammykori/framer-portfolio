@@ -1,7 +1,7 @@
-"use client"
-import Link from "next/link"
-import { slideDown, staggerParent, staggerChildX } from "@/motion"
-import { motion } from "motion/react"
+'use client'
+import Link from 'next/link'
+import { slideDown, staggerParent, staggerChildX } from '@/motion'
+import { motion } from 'motion/react'
 
 function NavigationMenu() {
     return (
@@ -12,7 +12,9 @@ function NavigationMenu() {
             className="flex w-full flex-row items-center  justify-between px-20 py-10 font-nixie text-2xl bg-white"
         >
             <div>
-                <h1>SAMMY KORI</h1>
+                <Link href="/" className="font-bold">
+                    SAMMY KORI
+                </Link>
             </div>
             <motion.ul
                 variants={staggerParent}
