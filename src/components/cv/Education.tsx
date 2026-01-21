@@ -1,10 +1,10 @@
-import { educationData } from "@/data/experience"
-import School from "./School"
+import { educationData } from '@/data/experience'
+import School from './School'
 
 function Education() {
     return (
         <section className="w-full flex flex-col mt-20">
-            <h2 className="text-right text-4xl float-right font-bold">
+            <h2 className="text-right text-2xl md:text-4xl float-right font-bold">
                 Education
             </h2>
 

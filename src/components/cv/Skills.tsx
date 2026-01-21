@@ -1,14 +1,14 @@
-import SkillRate from "@/components/cv/SkillRate"
+import SkillRate from '@/components/cv/SkillRate'
 function Skills() {
     return (
         <section className="w-full flex flex-col mt-20">
-            <h2 className="text-right text-4xl float-right font-bold">
+            <h2 className="text-right text-2xl md:text-4xl float-right font-bold">
                 SKILLS & EXPERTISE
             </h2>
             <div className="flex flex-col gap-10">
                 <div className="flex-col flex gap-4">
                     <div className="mt-10 w-full">
-                        <h1 className="text-3xl font-bold mb-2">
+                        <h1 className="text-2xl lg:text-3xl font-bold mb-2">
                             Frontend Development
                         </h1>
                         <SkillRate
@@ -42,7 +42,7 @@ function Skills() {
                             icon="teenyicons:tailwind-outline"
                         />
                     </div>
-                    <div className="text-2xl">
+                    <div className="text-xl md:text-2xl">
                         <h1>
                             API Integration (REST & GraphQL), State Management
                             (Redux, Zustand), Performance and Optimization, Unit
@@ -89,7 +89,7 @@ function Skills() {
                             icon="ri:vercel-fill"
                         />
                     </div>
-                    <div className="text-2xl">
+                    <div className="text-xl md:text-2xl">
                         <h1>
                             MongoDB, CI/CD Pipelines, PostgresQL, Docker,
                             Kubernetes, Sanity, Contentful, Laravel PHP, Github
