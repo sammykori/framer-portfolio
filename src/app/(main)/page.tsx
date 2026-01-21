@@ -63,18 +63,18 @@ export default function Home() {
             <main className="h-full flex w-full bg-white ">
                 <motion.section
                     style={{ x: contentX }}
-                    className="h-full w-[200vw] flex px-20"
+                    className="h-full w-[200vw] flex px-4 md:px-20"
                 >
-                    <div className="w-[60vw] flex flex-col justify-between items-start">
+                    <div className="w-[80] md:w-[60vw] flex flex-col justify-between items-start">
                         <motion.ul
                             variants={staggerParent}
                             initial="hidden"
                             animate="visible"
-                            className="text-8xl 2xl:text-9xl leading-30 2xl:leading-40"
+                            className="text-4xl md:text-8xl 2xl:text-9xl leading-10 md:leading-30 2xl:leading-40"
                         >
                             <motion.li
                                 variants={staggerChildX}
-                                className="h-40 relative"
+                                className="h-20 md:h-40 relative"
                             >
                                 <FlippingText
                                     textOpacity={text1p1Opacity}
@@ -92,7 +92,7 @@ export default function Home() {
 
                             <motion.li
                                 variants={staggerChildX}
-                                className="h-40 relative"
+                                className="h-20 md:h-40 relative"
                             >
                                 <FlippingText
                                     textOpacity={text2p1Opacity}
@@ -109,7 +109,7 @@ export default function Home() {
                             </motion.li>
                             <motion.li
                                 variants={staggerChildX}
-                                className="h-40 relative"
+                                className="h-20 md:h-40 relative"
                             >
                                 <FlippingText
                                     textOpacity={text3p1Opacity}
@@ -126,7 +126,7 @@ export default function Home() {
                             </motion.li>
                             <motion.li
                                 variants={staggerChildX}
-                                className="h-40 relative"
+                                className="h-20 md:h-40 relative"
                             >
                                 <FlippingText
                                     textOpacity={text4p1Opacity}
@@ -154,7 +154,7 @@ export default function Home() {
                                     rotateX: text5p1Rotate,
                                     transformOrigin: "top",
                                 }}
-                                className="text-4xl"
+                                className="text-2xl md:text-4xl"
                             >
                                 - LEONARDO DA VINCI
                             </motion.h1>
@@ -175,16 +175,16 @@ export default function Home() {
                             className="object-contain"
                         />
                     </motion.div>
-                    <div className="w-[60vw] flex flex-col justify-start items-start">
+                    <div className="w-[80] md:w-[60vw] flex flex-col justify-start items-start">
                         <motion.ul
                             variants={staggerParent}
                             initial="hidden"
                             animate="visible"
-                            className="w-full flex flex-col text-8xl 2xl:text-9xl leading-30 2xl:leading-40"
+                            className="w-full flex flex-col text-4xl md:text-8xl 2xl:text-9xl leading-10 md:leading-30 2xl:leading-40"
                         >
                             <motion.li
                                 variants={staggerChildX}
-                                className="h-40 relative flex justify-end"
+                                className="h-20 md:h-40 relative flex justify-end"
                             >
                                 <FlippingText
                                     textOpacity={text1d1Opacity}
@@ -202,7 +202,7 @@ export default function Home() {
 
                             <motion.li
                                 variants={staggerChildX}
-                                className="h-40 relative flex justify-end"
+                                className="h-20 md:h-40 relative flex justify-end"
                             >
                                 <FlippingText
                                     textOpacity={text2d1Opacity}
@@ -219,7 +219,7 @@ export default function Home() {
                             </motion.li>
                             <motion.li
                                 variants={staggerChildX}
-                                className="h-40 relative flex justify-end"
+                                className="h-20 md:h-40 relative flex justify-end"
                             >
                                 <FlippingText
                                     textOpacity={text3d1Opacity}
@@ -236,7 +236,7 @@ export default function Home() {
                             </motion.li>
                             <motion.li
                                 variants={staggerChildX}
-                                className="h-40 relative flex justify-end"
+                                className="h-20 md:h-40 relative flex justify-end"
                             >
                                 <FlippingText
                                     textOpacity={text4d1Opacity}

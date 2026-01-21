@@ -13,7 +13,7 @@ export default function DashboardLayout({
 }) {
     return (
         <div className="flex flex-col min-h-screen bg-white">
-            <div className="sticky top-0 flex overflow-hidden flex-col w-full ">
+            <div className="sticky top-0 z-50 flex overflow-hidden flex-col w-full ">
                 <NavigationMenu />
             </div>
             {children}

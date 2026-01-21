@@ -1,11 +1,11 @@
 function Summary() {
     return (
         <section className="w-full flex flex-col mt-20">
-            <h2 className="text-right text-4xl float-right font-bold">
+            <h2 className="text-right text-2xl md:text-4xl float-right font-bold">
                 SUMMARY
             </h2>
 
-            <div className="text-2xl flex flex-col gap-6">
+            <div className="text-xl md:text-2xl flex flex-col gap-6">
                 <p>
                     A Frontend Engineer with a{" "}
                     <span className="font-bold">&quot;product-owner&quot;</span>{" "}

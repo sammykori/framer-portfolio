@@ -2,8 +2,8 @@ import NavigationMenu from "@/components/sections/NavigationMenu"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-    title: "Sammy Kori",
-    description: "Portfolio of Sammy Kori",
+    title: "Blog | Sammy Kori",
+    description: "Portfolio and CV of Sammy Kori",
 }
 
 export default function DashboardLayout({
@@ -12,11 +12,11 @@ export default function DashboardLayout({
     children: React.ReactNode
 }) {
     return (
-        <div className="flex min-h-screen h-[1000vh] bg-white">
-            <div className="flex sticky z-50 top-0 left-0 overflow-hidden flex-col w-full mx-auto min-h-screen h-screen">
+        <div className="flex flex-col min-h-screen bg-white">
+            <div className="sticky z-50 top-0 flex overflow-hidden flex-col w-full ">
                 <NavigationMenu />
-                {children}
             </div>
+            {children}
         </div>
     )
 }

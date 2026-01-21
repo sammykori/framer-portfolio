@@ -16,7 +16,7 @@ function School({ education }: EducationProps) {
             </div>
             <div className="flex flex-col col-span-11">
                 <div className="flex flex-col gap-6">
-                    <h1 className="text-3xl underline">
+                    <h1 className="text-2xl md:text-3xl underline">
                         {education.institution}
                     </h1>
 
