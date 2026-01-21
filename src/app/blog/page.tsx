@@ -1,6 +1,6 @@
-'use client'
-import BlogPostCard from '@/components/blog/BlogPostCard'
-import { postTypes, blogPosts } from '@/data/blog'
+"use client"
+import BlogPostCard from "@/components/blog/BlogPostCard"
+import { postTypes, blogPosts } from "@/data/blog"
 
 export default function Home() {
     return (
@@ -12,7 +12,7 @@ export default function Home() {
                         and Creative Inspiration
                     </h1>
                     <p className="w-full lg:w-1/2 text-lg md:text-2xl text-center mt-2 md:mt-10">
-                        {' '}
+                        {" "}
                         A personal blog/diary for my reflection and growth
                     </p>
                 </header>

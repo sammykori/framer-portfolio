@@ -1,15 +1,15 @@
-'use client'
-import Image from 'next/image'
-import { useParams } from 'next/navigation'
-import { blogPosts } from '@/data/blog'
-import { Icon } from '@iconify/react'
-import Link from 'next/link'
+"use client"
+import Image from "next/image"
+import { useParams } from "next/navigation"
+import { blogPosts } from "@/data/blog"
+import { Icon } from "@iconify/react"
+import Link from "next/link"
 
 function Home() {
     const params = useParams()
     const postId = params.id
     const post = blogPosts.find(
-        (post) => post.id === parseInt(postId?.toString() || '')
+        (post) => post.id === parseInt(postId?.toString() || "")
     )
     if (!post) {
         return <div>Post not found</div>
@@ -30,8 +30,8 @@ function Home() {
                             alt="Sammy Kori"
                             fill
                             style={{
-                                objectFit: 'cover',
-                                objectPosition: '10% -50%',
+                                objectFit: "cover",
+                                objectPosition: "10% -50%",
                             }}
                             className="rounded-full"
                         />
@@ -50,8 +50,8 @@ function Home() {
                     alt={post.title}
                     fill
                     style={{
-                        objectFit: 'cover',
-                        objectPosition: 'center',
+                        objectFit: "cover",
+                        objectPosition: "center",
                     }}
                     className="object-cover grayscale-100 hover:grayscale-60 transition-all"
                 />

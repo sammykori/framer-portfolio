@@ -1,9 +1,9 @@
-'use client'
-import Link from 'next/link'
-import { slideDown, staggerParent, staggerChildX, fade } from '@/motion'
-import { motion } from 'motion/react'
-import { Icon } from '@iconify/react'
-import { useState } from 'react'
+"use client"
+import Link from "next/link"
+import { slideDown, staggerParent, staggerChildX, fade } from "@/motion"
+import { motion } from "motion/react"
+import { Icon } from "@iconify/react"
+import { useState } from "react"
 
 function NavigationMenu() {
     const [isOpen, setIsOpen] = useState(false)

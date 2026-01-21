@@ -1,4 +1,4 @@
-import { Icon } from '@iconify/react'
+import { Icon } from "@iconify/react"
 
 type SkillRateProps = {
     skillName: string
@@ -16,7 +16,7 @@ function SkillRate({ skillName, color, proficiency, icon }: SkillRateProps) {
                         className="h-2 "
                         style={{
                             width: `${proficiency}%`,
-                            backgroundColor: `${color ? color : 'black'}`,
+                            backgroundColor: `${color ? color : "black"}`,
                         }}
                     ></div>
                 </div>

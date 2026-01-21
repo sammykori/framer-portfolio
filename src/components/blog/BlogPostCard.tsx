@@ -1,6 +1,6 @@
-import Image from 'next/image'
-import { blogPosts } from '@/data/blog'
-import Link from 'next/link'
+import Image from "next/image"
+import { blogPosts } from "@/data/blog"
+import Link from "next/link"
 
 type BlogPostCardProps = {
     post: (typeof blogPosts)[number]
@@ -16,8 +16,8 @@ function BlogPostCard({ post }: BlogPostCardProps) {
                         alt={post.title}
                         fill
                         style={{
-                            objectFit: 'cover',
-                            objectPosition: 'center',
+                            objectFit: "cover",
+                            objectPosition: "center",
                         }}
                         className="object-cover grayscale-100 hover:grayscale-60 transition-all"
                     />

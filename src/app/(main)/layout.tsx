@@ -1,9 +1,9 @@
-import NavigationMenu from '@/components/sections/NavigationMenu'
-import type { Metadata } from 'next'
+import NavigationMenu from "@/components/sections/NavigationMenu"
+import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-    title: 'Sammy Kori',
-    description: 'Portfolio of Sammy Kori',
+    title: "Sammy Kori",
+    description: "Portfolio of Sammy Kori",
 }
 
 export default function DashboardLayout({
