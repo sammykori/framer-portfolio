@@ -65,7 +65,7 @@ export default function Home() {
                     style={{ x: contentX }}
                     className="h-full w-[200vw] flex px-4 md:px-20"
                 >
-                    <div className="w-[80] md:w-[60vw] flex flex-col justify-between items-start">
+                    <div className="w-[80vw] md:w-[60vw] flex flex-col justify-between items-start">
                         <motion.ul
                             variants={staggerParent}
                             initial="hidden"
@@ -162,7 +162,7 @@ export default function Home() {
                     </div>
                     <motion.div
                         style={{ opacity: imageOpacity }}
-                        className="relative h-full w-[80vw]"
+                        className="relative h-full w-[200vw] md:w-[80vw]"
                     >
                         <Image
                             src="/img/main_img.png"
@@ -175,7 +175,7 @@ export default function Home() {
                             className="object-contain"
                         />
                     </motion.div>
-                    <div className="w-[80] md:w-[60vw] flex flex-col justify-start items-start">
+                    <div className="w-[80vw] md:w-[60vw] flex flex-col justify-start items-start">
                         <motion.ul
                             variants={staggerParent}
                             initial="hidden"
