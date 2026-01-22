@@ -1,8 +1,8 @@
-'use client'
-import { motion, useScroll, useTransform } from 'motion/react'
-import { staggerParent, staggerChildX, slideUp } from '@/motion'
-import FlippingText from '@/components/home/FlippingText'
-import Image from 'next/image'
+"use client"
+import { motion, useScroll, useTransform } from "motion/react"
+import { staggerParent, staggerChildX, slideUp } from "@/motion"
+import FlippingText from "@/components/home/FlippingText"
+import Image from "next/image"
 
 export default function Home() {
     const { scrollYProgress } = useScroll()
@@ -55,7 +55,7 @@ export default function Home() {
     const contentX = useTransform(
         scrollYProgress,
         [0, 0.18, 0.3, 1],
-        ['0%', '0%', '-50%', '-50%']
+        ["0%", "0%", "-50%", "-50%"]
     )
 
     return (
@@ -152,7 +152,7 @@ export default function Home() {
                                 style={{
                                     opacity: text5p1Opacity,
                                     rotateX: text5p1Rotate,
-                                    transformOrigin: 'top',
+                                    transformOrigin: "top",
                                 }}
                                 className="text-2xl md:text-4xl"
                             >
@@ -169,8 +169,8 @@ export default function Home() {
                             alt="Hero Image"
                             fill
                             style={{
-                                objectFit: 'contain',
-                                objectPosition: 'bottom',
+                                objectFit: "contain",
+                                objectPosition: "bottom",
                             }}
                             className="object-contain"
                         />
