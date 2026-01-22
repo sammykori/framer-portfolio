@@ -1,8 +1,8 @@
-"use client"
-import { motion, useScroll, useTransform } from "motion/react"
-import { staggerParent, staggerChildX, slideUp } from "@/motion"
-import FlippingText from "@/components/home/FlippingText"
-import Image from "next/image"
+'use client'
+import { motion, useScroll, useTransform } from 'motion/react'
+import { staggerParent, staggerChildX, slideUp } from '@/motion'
+import FlippingText from '@/components/home/FlippingText'
+import Image from 'next/image'
 
 export default function Home() {
     const { scrollYProgress } = useScroll()
@@ -55,7 +55,7 @@ export default function Home() {
     const contentX = useTransform(
         scrollYProgress,
         [0, 0.18, 0.3, 1],
-        ["0%", "0%", "-50%", "-50%"]
+        ['0%', '0%', '-50%', '-50%']
     )
 
     return (
@@ -65,7 +65,7 @@ export default function Home() {
                     style={{ x: contentX }}
                     className="h-full w-[200vw] flex px-4 md:px-20"
                 >
-                    <div className="w-[80] md:w-[60vw] flex flex-col justify-between items-start">
+                    <div className="w-[80vw] md:w-[60vw] flex flex-col justify-between items-start">
                         <motion.ul
                             variants={staggerParent}
                             initial="hidden"
@@ -152,7 +152,7 @@ export default function Home() {
                                 style={{
                                     opacity: text5p1Opacity,
                                     rotateX: text5p1Rotate,
-                                    transformOrigin: "top",
+                                    transformOrigin: 'top',
                                 }}
                                 className="text-2xl md:text-4xl"
                             >
@@ -162,20 +162,20 @@ export default function Home() {
                     </div>
                     <motion.div
                         style={{ opacity: imageOpacity }}
-                        className="relative h-full w-[80vw]"
+                        className="relative h-full w-[200vw] md:w-[80vw]"
                     >
                         <Image
                             src="/img/main_img.png"
                             alt="Hero Image"
                             fill
                             style={{
-                                objectFit: "contain",
-                                objectPosition: "bottom",
+                                objectFit: 'contain',
+                                objectPosition: 'bottom',
                             }}
                             className="object-contain"
                         />
                     </motion.div>
-                    <div className="w-[80] md:w-[60vw] flex flex-col justify-start items-start">
+                    <div className="w-[80vw] md:w-[60vw] flex flex-col justify-start items-start">
                         <motion.ul
                             variants={staggerParent}
                             initial="hidden"

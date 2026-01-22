@@ -1,9 +1,9 @@
-"use client"
-import Link from "next/link"
-import { slideDown, staggerParent, staggerChildX, fade } from "@/motion"
-import { motion } from "motion/react"
-import { Icon } from "@iconify/react"
-import { useState } from "react"
+'use client'
+import Link from 'next/link'
+import { slideDown, staggerParent, staggerChildX, fade } from '@/motion'
+import { motion } from 'motion/react'
+import { Icon } from '@iconify/react'
+import { useState } from 'react'
 
 function NavigationMenu() {
     const [isOpen, setIsOpen] = useState(false)
@@ -27,7 +27,10 @@ function NavigationMenu() {
                     className="sm:hidden"
                     onClick={() => setIsOpen(!isOpen)}
                 >
-                    <Icon icon="mdi:menu" className="text-3xl" />
+                    <Icon
+                        icon={isOpen ? 'mdi:close' : 'mdi:menu'}
+                        className="text-3xl"
+                    />
                 </motion.button>
                 <motion.ul
                     variants={staggerParent}
@@ -47,12 +50,12 @@ function NavigationMenu() {
                 </motion.ul>
             </motion.nav>
             {isOpen && (
-                <motion.div className="inset-0 top-20 w-full bg-white h-screen flex z-50 px-4">
+                <motion.div className="inset-0 absolute top-20 w-full bg-white h-screen flex z-50 px-4">
                     <motion.ul
                         variants={staggerParent}
                         initial="hidden"
                         animate="visible"
-                        className="flex-col items-start gap-8 flex justify-start text-black text-2xl font-nixie"
+                        className="flex-col items-start gap-8 flex justify-start text-black text-2xl font-nixie my-10"
                     >
                         <motion.li variants={staggerChildX}>
                             <Link href="/">HOME</Link>
