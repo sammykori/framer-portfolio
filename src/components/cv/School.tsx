@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react"
 import { educationData } from "@/data/experience"
+import Image from "next/image"
 
 type EducationProps = {
     education: (typeof educationData)[0] // Adjust the type according to the structure of your
@@ -9,8 +10,18 @@ function School({ education }: EducationProps) {
     return (
         <div className="w-full border-b p-10 grid grid-cols-12 ">
             <div className="h-full col-span-1 flex flex-col gap-2 items-center mr-10">
-                <div className="rounded-full size-10 bg-gray-200 flex items-center justify-center">
-                    <Icon icon="mdi:briefcase" className="size-4 " />
+                <div className="rounded-full aspect-square size-10 bg-gray-200 flex items-center justify-center relative">
+                    <Image
+                        src={`/img/school${education.image}`}
+                        alt={education.institution}
+                        fill
+                        style={{
+                            objectFit: "contain",
+                            objectPosition: "center",
+                        }}
+                        className="object-cover rounded-full"
+                    />
+                    {/* <Icon icon="mdi:briefcase" className="size-4 " /> */}
                 </div>
                 <hr className="h-full w-0.5 bg-gray-200"></hr>
             </div>

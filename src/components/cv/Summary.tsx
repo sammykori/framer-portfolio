@@ -5,7 +5,7 @@ function Summary() {
                 SUMMARY
             </h2>
 
-            <div className="text-xl md:text-2xl flex flex-col gap-6">
+            <div className="text-xl md:text-2xl flex flex-col gap-6 text-justify mt-4">
                 <p>
                     A Frontend Engineer with a{" "}
                     <span className="font-bold">&quot;product-owner&quot;</span>{" "}

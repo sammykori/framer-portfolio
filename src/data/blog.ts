@@ -13,13 +13,13 @@ const blogPosts = [
     },
     {
         id: 2,
-        title: "Reminiscing BU",
+        title: "Compile, Build & Run",
         subtitle:
             "What I could have done better while I was studying at Bournemouth University",
         date: "August 20, 2023",
         type: "life",
         readTime: "8",
-        imageUrl: "/img/blog/post2.jpeg",
+        imageUrl: "/img/blog/post4.png",
     },
     {
         id: 3,
