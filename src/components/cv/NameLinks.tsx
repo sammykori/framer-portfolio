@@ -1,5 +1,5 @@
-import Link from "next/link"
-import { Icon } from "@iconify/react"
+import Link from 'next/link'
+import { Icon } from '@iconify/react'
 
 function NameLinks() {
     return (
@@ -18,7 +18,7 @@ function NameLinks() {
             <div className="mt-4 flex flex-row items-center">
                 <Icon icon="mdi:linkedin" className="mr-4 size-6" />
                 <Link
-                    href="https://github.com/sammykori"
+                    href="https://www.linkedin.com/in/samuelkori/"
                     className="text-lg md:text-2xl "
                 >
                     LinkedIn
@@ -28,7 +28,7 @@ function NameLinks() {
             <div className="mt-4 flex flex-row items-center">
                 <Icon icon="mdi:youtube" className="mr-4 size-6" />
                 <Link
-                    href="https://github.com/sammykori"
+                    href="https://www.youtube.com/@sammykoricodes"
                     className="text-lg md:text-2xl "
                 >
                     YouTube
