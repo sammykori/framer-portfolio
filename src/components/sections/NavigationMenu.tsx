@@ -16,7 +16,10 @@ function NavigationMenu() {
                 className="flex w-full flex-row items-center justify-between px-4 md:px-20 py-10 font-nixie text-2xl bg-white"
             >
                 <motion.div variants={fade} initial="hidden" animate="visible">
-                    <Link href="/" className="font-bold text-nowrap">
+                    <Link
+                        href="/"
+                        className="text-lg md:text-2xl font-bold text-nowrap"
+                    >
                         SAMMY KORI
                     </Link>
                 </motion.div>

@@ -4,6 +4,8 @@ import NameLinks from "@/components/cv/NameLinks"
 import Summary from "@/components/cv/Summary"
 import Experience from "@/components/cv/Experience"
 import Education from "@/components/cv/Education"
+import Interests from "@/components/cv/Interests"
+import Awards from "@/components/cv/Awards"
 
 export default function Home() {
     return (
@@ -13,6 +15,8 @@ export default function Home() {
                     <NameLinks />
                     <Skills />
                     <Education />
+                    <Awards />
+                    <Interests />
                 </div>
                 <div className="lg:col-span-3">
                     <Summary />
