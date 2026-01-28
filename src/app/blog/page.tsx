@@ -1,8 +1,10 @@
 "use client"
 import BlogPostCard from "@/components/blog/BlogPostCard"
 import { postTypes, blogPosts } from "@/data/blog"
+import { useState } from "react"
 
 export default function Home() {
+    const [active, setActive] = useState<string>("all")
     return (
         <div className="flex-1 grow items-center justify-center bg-white font-nixie pb-20">
             <main className="h-full  w-full bg-white px-4 md:px-20">
@@ -16,13 +18,28 @@ export default function Home() {
                         A personal blog/diary for my reflection and growth
                     </p>
                 </header>
-                <ul className="flex flex-row justify-around items-center font-bold text-xl my-10 text-gray-400">
-                    <li>
-                        <h1>ALL</h1>
+                <ul className="w-full flex flex-row justify-around items-center font-bold text-xl my-10 text-gray-400 overflow-x-auto">
+                    <li
+                        onClick={() => setActive("all")}
+                        className="w-full min-w-20 flex items-center justify-center "
+                    >
+                        <h1
+                            className={`${active === "all" ? "font-bold text-black  border-b-2 border-black" : ""}`}
+                        >
+                            ALL
+                        </h1>
                     </li>
                     {postTypes.map((type) => (
-                        <li key={type}>
-                            <h1>{type.toUpperCase()}</h1>
+                        <li
+                            key={type}
+                            onClick={() => setActive(type)}
+                            className="w-full min-w-32 flex items-center justify-center"
+                        >
+                            <h1
+                                className={`${active === type ? "font-bold text-black border-b-2 border-black" : ""}`}
+                            >
+                                {type.toUpperCase()}
+                            </h1>
                         </li>
                     ))}
                 </ul>

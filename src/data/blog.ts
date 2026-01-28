@@ -1,4 +1,4 @@
-const postTypes = ["tech", "life", "travel"] as const
+const postTypes = ["tech", "life", "travel", "research"] as const
 
 const blogPosts = [
     {
@@ -13,21 +13,23 @@ const blogPosts = [
     },
     {
         id: 2,
-        title: "Exploring the Mountains",
-        subtitle: "Join us for an unforgettable experience!",
+        title: "Reminiscing BU",
+        subtitle:
+            "What I could have done better while I was studying at Bournemouth University",
         date: "August 20, 2023",
-        type: "travel",
+        type: "life",
         readTime: "8",
-        imageUrl: "/img/blog/post1.jpg",
+        imageUrl: "/img/blog/post2.jpeg",
     },
     {
         id: 3,
-        title: "JavaScript Best Practices",
-        subtitle: "Join us for an unforgettable experience!",
+        title: "Navigating the UK Job Market",
+        subtitle:
+            "As a Frontend Developer I try to navigate some of the challenges in the Job Market",
         date: "August 20, 2023",
         type: "tech",
         readTime: "12",
-        imageUrl: "/img/blog/post1.jpg",
+        imageUrl: "/img/blog/post3.jpg",
     },
 ]
 
