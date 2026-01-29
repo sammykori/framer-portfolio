@@ -12,11 +12,12 @@ export default function DashboardLayout({
     children: React.ReactNode
 }) {
     return (
-        <div className="flex min-h-screen h-[1000vh] bg-white">
-            <div className="flex sticky z-50 top-0 left-0 overflow-hidden flex-col w-full mx-auto min-h-screen h-screen">
+        <div className="flex flex-col min-h-screen bg-white">
+            <header className="sticky top-0 left-0 z-50 w-full bg-white">
                 <NavigationMenu />
-                {children}
-            </div>
+            </header>
+
+            <main className="flex-1 w-full">{children}</main>
         </div>
     )
 }

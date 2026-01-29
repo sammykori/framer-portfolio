@@ -1,11 +1,16 @@
 "use client"
 import { motion, useScroll, useTransform } from "motion/react"
 import { staggerParent, staggerChildX, slideUp } from "@/motion"
+import { useRef } from "react"
 import FlippingText from "@/components/home/FlippingText"
 import Image from "next/image"
 
 export default function Home() {
-    const { scrollYProgress } = useScroll()
+    const containerRef = useRef(null)
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start start", "end end"],
+    })
     const text1p1Opacity = useTransform(scrollYProgress, [0, 0.04], [1, 0])
     const text1p2Opacity = useTransform(scrollYProgress, [0, 0.04], [0, 1])
     const text1p1Rotate = useTransform(scrollYProgress, [0, 0.04], [0, 90])
@@ -54,18 +59,21 @@ export default function Home() {
 
     const contentX = useTransform(
         scrollYProgress,
-        [0, 0.18, 0.3, 1],
+        [0, 0.18, 0.3, 0.47],
         ["0%", "0%", "-50%", "-50%"]
     )
 
     return (
-        <div className="flex-1 grow items-center justify-center bg-white font-nixie">
-            <main className="h-full flex w-full bg-white ">
+        <div className="relative">
+            <main
+                ref={containerRef}
+                className="relative h-[300vh] bg-white font-nixie"
+            >
                 <motion.section
                     style={{ x: contentX }}
-                    className="h-full w-[200vw] flex px-4 md:px-20"
+                    className="sticky top-28 h-[calc(100vh-112px)] w-[200vw] flex px-4 md:px-20"
                 >
-                    <div className="w-[80vw] md:w-[60vw] flex flex-col justify-between items-start">
+                    <div className="w-[80vw] md:w-[60vw] flex flex-col justify-between items-start relative">
                         <motion.ul
                             variants={staggerParent}
                             initial="hidden"
@@ -154,7 +162,7 @@ export default function Home() {
                                     rotateX: text5p1Rotate,
                                     transformOrigin: "top",
                                 }}
-                                className="text-2xl md:text-4xl"
+                                className="text-2xl md:text-4xl whitespace-nowrap"
                             >
                                 - LEONARDO DA VINCI
                             </motion.h1>
@@ -254,6 +262,7 @@ export default function Home() {
                         </motion.ul>
                     </div>
                 </motion.section>
+                <motion.section className="h-[100vh] w-[100vw] bg-red-500"></motion.section>
             </main>
         </div>
     )
