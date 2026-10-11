@@ -1,6 +1,6 @@
-import Image from "next/image"
-import { blogPosts } from "@/data/blog"
-import Link from "next/link"
+import Image from 'next/image'
+import { blogPosts } from '@/data/blog'
+import Link from 'next/link'
 
 type BlogPostCardProps = {
     post: (typeof blogPosts)[number]
@@ -9,15 +9,15 @@ type BlogPostCardProps = {
 function BlogPostCard({ post }: BlogPostCardProps) {
     return (
         <Link href={`/blog/${post.id}`} className="w-full flex flex-col">
-            <div className="w-full h-96 border border-gray-300 relative p-2">
-                <div className="w-full h-full bg-gray-200 relative">
+            <div className="w-full h-96 border border-orange-600 relative p-2">
+                <div className="w-full h-full bg-orange-200 relative">
                     <Image
                         src={post.imageUrl}
                         alt={post.title}
                         fill
                         style={{
-                            objectFit: "cover",
-                            objectPosition: "center",
+                            objectFit: 'cover',
+                            objectPosition: 'center',
                         }}
                         className="object-cover grayscale-100 hover:grayscale-60 transition-all"
                     />

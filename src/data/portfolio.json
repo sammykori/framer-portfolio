@@ -1,0 +1,204 @@
+{
+    "governance": [
+        {
+            "slug": "genai-acceptable-use-policy",
+            "title": "Generative AI Acceptable Use Policy",
+            "description": "Drafted and rolled out an organisation-wide policy for using generative AI tools safely at work.",
+            "categories": ["Policy", "Risk Management"],
+            "frameworks": ["NIST AI RMF", "ISO/IEC 42001"],
+            "date": "2025-09-01",
+            "organisation": "Earthstorm Media",
+            "role": "AI Governance Lead",
+            "overview": "Staff were already using ChatGPT, Copilot and image generators with no shared rules. I ran a discovery survey, mapped the tools in use against data classification levels, and wrote a short, plain-English policy covering approved tools, prohibited data, disclosure and human review.",
+            "outcomes": [
+                "Policy adopted across 4 departments within 6 weeks",
+                "Approved-tools register with a lightweight request process",
+                "30-minute training session delivered to 60+ staff"
+            ]
+        },
+        {
+            "slug": "model-risk-assessment-framework",
+            "title": "Model Risk Assessment Framework",
+            "description": "Designed a tiered risk assessment that every new AI feature passes through before launch.",
+            "categories": ["Risk Management", "Assurance"],
+            "frameworks": ["EU AI Act", "NIST AI RMF"],
+            "date": "2025-06-01",
+            "organisation": "Earthstorm Media",
+            "role": "AI Governance Lead",
+            "overview": "I built a questionnaire-driven framework that classifies AI use cases into risk tiers modelled on the EU AI Act. Each tier unlocks a proportionate set of controls, from a simple checklist for low-risk features to a full impact assessment and sign-off for high-risk ones.",
+            "outcomes": [
+                "Risk tiering applied to 12 AI features in the first quarter",
+                "Average review time cut from 3 weeks to 5 days",
+                "Reusable templates for impact assessments and sign-off"
+            ]
+        },
+        {
+            "slug": "bias-audit-recruitment-screening",
+            "title": "Bias Audit: Recruitment Screening Tool",
+            "description": "Audited a CV-screening model for disparate impact across gender and ethnicity.",
+            "categories": ["Fairness", "Audit"],
+            "frameworks": ["Fairlearn", "UK Equality Act 2010"],
+            "date": "2025-03-01",
+            "organisation": "Client engagement",
+            "role": "Lead Auditor",
+            "overview": "A client wanted assurance before scaling a third-party recruitment screening tool. I designed the test dataset, ran selection-rate and equalised-odds analysis using Fairlearn, and presented findings with clear remediation options to HR and legal.",
+            "outcomes": [
+                "Identified a 14% selection-rate gap that was then mitigated",
+                "Vendor contract updated with ongoing monitoring clauses",
+                "Audit methodology reused for two further tools"
+            ]
+        },
+        {
+            "slug": "ai-system-inventory",
+            "title": "AI System Inventory & Register",
+            "description": "Built a central register of every AI system in use, with owners, data flows and risk ratings.",
+            "categories": ["Transparency", "Operations"],
+            "frameworks": ["ISO/IEC 42001", "Model Cards"],
+            "date": "2024-11-01",
+            "organisation": "Earthstorm Media",
+            "role": "AI Governance Lead",
+            "overview": "You can't govern what you can't see. I combined procurement records, a staff survey and code repository scans to build the first inventory of AI systems, then turned it into a living register with named owners and review dates.",
+            "outcomes": [
+                "38 AI systems catalogued, 9 previously unknown",
+                "Every system assigned an accountable owner",
+                "Quarterly review cadence established"
+            ]
+        },
+        {
+            "slug": "responsible-ai-training-programme",
+            "title": "Responsible AI Training Programme",
+            "description": "Created a role-based training programme on responsible AI for engineers, managers and leadership.",
+            "categories": ["Education", "Culture"],
+            "frameworks": ["OECD AI Principles", "UK AI Principles"],
+            "date": "2024-08-01",
+            "organisation": "Earthstorm Media",
+            "role": "AI Governance Lead",
+            "overview": "Different roles need different depth. I designed three tracks: a hands-on engineering track covering evaluation and documentation, a manager track on risk ownership, and a short leadership briefing on regulation and accountability.",
+            "outcomes": [
+                "Three training tracks delivered to 90+ people",
+                "Post-training confidence score up from 2.6 to 4.2 out of 5",
+                "Content packaged for self-serve onboarding"
+            ]
+        },
+        {
+            "slug": "llm-evaluation-guardrails",
+            "title": "LLM Evaluation & Guardrails Standard",
+            "description": "Defined how LLM-powered features are evaluated, red-teamed and monitored after release.",
+            "categories": ["Safety", "Assurance"],
+            "frameworks": ["OWASP Top 10 for LLMs", "NIST AI RMF"],
+            "date": "2024-05-01",
+            "organisation": "Earthstorm Media",
+            "role": "Engineer → Governance",
+            "overview": "This is where my engineering and governance work met. I wrote a standard covering evaluation datasets, prompt-injection testing, output filtering and production monitoring, then built the first reference implementation myself.",
+            "outcomes": [
+                "Standard adopted for all customer-facing LLM features",
+                "Red-team checklist mapped to the OWASP LLM Top 10",
+                "Monitoring dashboard tracking refusal and hallucination rates"
+            ]
+        }
+    ],
+    "fullstack": [
+        {
+            "slug": "ledgerly",
+            "name": "Ledgerly",
+            "company": "Earthstorm Media",
+            "role": "Lead Full Stack Developer",
+            "date": "2025-02-01",
+            "image": "/img/portfolio/ledgerly.svg",
+            "tools": ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Stripe"],
+            "summary": "Invoicing and bookkeeping platform for UK small businesses.",
+            "overview": "Ledgerly helps sole traders and small businesses send invoices, track expenses and prepare for Making Tax Digital. I led the build from architecture to launch, owning the API, the billing integration and the dashboard UI.",
+            "highlights": [
+                "Stripe billing with automated dunning and VAT handling",
+                "Row-level security on a multi-tenant PostgreSQL schema",
+                "Lighthouse performance score above 95 on key pages"
+            ],
+            "link": "https://example.com"
+        },
+        {
+            "slug": "routewise",
+            "name": "RouteWise",
+            "company": "Quantum Logistics",
+            "role": "Full Stack Developer",
+            "date": "2024-07-01",
+            "image": "/img/portfolio/routewise.svg",
+            "tools": ["React", "Node.js", "Express", "MongoDB", "Mapbox"],
+            "summary": "Delivery route planning and live driver tracking.",
+            "overview": "A dispatch tool that plans multi-stop delivery routes and shows live driver locations. I built the route optimisation service and the real-time map view used by dispatchers.",
+            "highlights": [
+                "WebSocket-based live tracking for 200+ drivers",
+                "Route optimisation reduced average mileage by 11%",
+                "Offline-first driver app with background sync"
+            ],
+            "link": "https://example.com"
+        },
+        {
+            "slug": "clinicq",
+            "name": "ClinicQ",
+            "company": "Cinolla",
+            "role": "Frontend Lead",
+            "date": "2023-10-01",
+            "image": "/img/portfolio/clinicq.svg",
+            "tools": ["Vue", "Nuxt", "Tailwind CSS", "Firebase"],
+            "summary": "Patient queueing and appointment check-in for clinics.",
+            "overview": "ClinicQ replaces paper sign-in sheets with a QR-code check-in and live queue display. I led the frontend, designed the component library and made the patient flow fully accessible.",
+            "highlights": [
+                "WCAG 2.1 AA compliant patient flow",
+                "Shared component library used across three products",
+                "Check-in time cut from minutes to seconds"
+            ],
+            "link": "https://example.com"
+        },
+        {
+            "slug": "brightboard",
+            "name": "BrightBoard",
+            "company": "QodeHub",
+            "role": "Full Stack Developer",
+            "date": "2023-03-01",
+            "image": "/img/portfolio/brightboard.svg",
+            "tools": ["React", "GraphQL", "Apollo", "Python", "Django"],
+            "summary": "Learning management dashboard for coding bootcamps.",
+            "overview": "BrightBoard gives bootcamp students and mentors one place for assignments, feedback and progress tracking. I built the GraphQL API and the mentor review workflow.",
+            "highlights": [
+                "GraphQL API serving web and mobile clients",
+                "Inline code review tool for mentor feedback",
+                "Progress analytics for cohort leads"
+            ],
+            "link": "https://example.com"
+        },
+        {
+            "slug": "borderless",
+            "name": "Borderless",
+            "company": "Side project",
+            "role": "Founder & Developer",
+            "date": "2025-08-01",
+            "image": "/img/portfolio/borderless.svg",
+            "tools": ["React Native", "Expo", "Supabase", "OpenAI API"],
+            "summary": "Immigration guidance app that helps newcomers settle in faster.",
+            "overview": "Borderless turns confusing immigration information into clear, step-by-step guidance. It uses an LLM assistant grounded in official sources, with guardrails I designed so it says when it doesn't know.",
+            "highlights": [
+                "Retrieval-augmented answers with source citations",
+                "Guardrails and evaluation suite for the AI assistant",
+                "Personalised checklists for visas and settling in"
+            ],
+            "link": "https://borderless.app"
+        },
+        {
+            "slug": "stockpulse",
+            "name": "StockPulse",
+            "company": "NCA Retail",
+            "role": "Backend Developer",
+            "date": "2022-06-01",
+            "image": "/img/portfolio/stockpulse.svg",
+            "tools": ["Node.js", "NestJS", "Redis", "AWS", "Docker"],
+            "summary": "Inventory forecasting and low-stock alerts for retail stores.",
+            "overview": "StockPulse forecasts demand per store and alerts managers before items run out. I built the ingestion pipeline and alerting service, and containerised the stack on AWS.",
+            "highlights": [
+                "Event pipeline processing 1M+ sales records per day",
+                "Redis-backed alerting with per-store thresholds",
+                "Infrastructure as code with automated deployments"
+            ],
+            "link": "https://example.com"
+        }
+    ]
+}

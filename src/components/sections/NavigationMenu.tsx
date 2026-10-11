@@ -1,19 +1,27 @@
-"use client"
-import Link from "next/link"
-import { slideDown, staggerParent, staggerChildX, fade } from "@/motion"
-import { motion } from "motion/react"
-import { Icon } from "@iconify/react"
-import { useState } from "react"
+'use client'
+import Link from 'next/link'
+import { slideDown, staggerParent, staggerChildX, fade } from '@/motion'
+import { motion } from 'motion/react'
+import { Icon } from '@iconify/react'
+import { useState } from 'react'
+import { usePathname } from 'next/navigation'
+
+const Links = [
+    { name: 'HOME', href: '/' },
+    { name: 'PORTFOLIO', href: '/portfolio' },
+    { name: 'BLOG', href: '/blog' },
+]
 
 function NavigationMenu() {
     const [isOpen, setIsOpen] = useState(false)
+    const pathname = usePathname()
     return (
         <>
             <motion.nav
                 variants={slideDown}
                 initial="hidden"
                 animate="visible"
-                className="flex w-full flex-row items-center justify-between px-4 md:px-20 py-10 font-nixie text-2xl bg-white"
+                className="flex w-full flex-row items-center justify-between px-4 md:px-20 py-4 font-nixie text-2xl bg-orange-100 z-50"
             >
                 <motion.div variants={fade} initial="hidden" animate="visible">
                     <Link
@@ -31,7 +39,7 @@ function NavigationMenu() {
                     onClick={() => setIsOpen(!isOpen)}
                 >
                     <Icon
-                        icon={isOpen ? "mdi:close" : "mdi:menu"}
+                        icon={isOpen ? 'mdi:close' : 'mdi:menu'}
                         className="text-3xl"
                     />
                 </motion.button>
@@ -41,15 +49,20 @@ function NavigationMenu() {
                     animate="visible"
                     className="flex-row items-center gap-8 hidden sm:flex"
                 >
-                    <motion.li variants={staggerChildX}>
-                        <Link href="/">HOME</Link>
-                    </motion.li>
-                    <motion.li variants={staggerChildX}>
-                        <Link href="/cv">CV</Link>
-                    </motion.li>
-                    <motion.li variants={staggerChildX}>
-                        <Link href="/blog">BLOG</Link>
-                    </motion.li>
+                    {Links.map((link) => (
+                        <motion.li key={link.name} variants={staggerChildX}>
+                            <Link
+                                href={link.href}
+                                className={
+                                    pathname === link.href
+                                        ? 'text-orange-600'
+                                        : ''
+                                }
+                            >
+                                {link.name}
+                            </Link>
+                        </motion.li>
+                    ))}
                 </motion.ul>
             </motion.nav>
             {isOpen && (
@@ -62,6 +75,9 @@ function NavigationMenu() {
                     >
                         <motion.li variants={staggerChildX}>
                             <Link href="/">HOME</Link>
+                        </motion.li>
+                        <motion.li variants={staggerChildX}>
+                            <Link href="/portfolio">PORTFOLIO</Link>
                         </motion.li>
                         <motion.li variants={staggerChildX}>
                             <Link href="/cv">CV</Link>
