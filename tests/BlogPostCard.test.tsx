@@ -4,16 +4,16 @@
 
 import { render, screen } from "@testing-library/react"
 import BlogPostCard from "@/components/blog/BlogPostCard"
-// ... rest of your test
+import type { BlogPost } from "@/data/blog"
 
-const mockPost = {
-    id: 1,
+const mockPost: BlogPost = {
+    slug: "my-first-post",
     title: "My First Post",
     subtitle: "hi",
-    date: "hi",
-    type: "travel",
-    imageUrl: "/test-image.jpg",
-    readTime: "5",
+    date: "2023-08-20",
+    type: "Life",
+    image: "/test-image.jpg",
+    readTime: 5,
 }
 
 describe("Render PostCard", () => {

@@ -12,7 +12,7 @@ export default function DashboardLayout({
     children: React.ReactNode
 }) {
     return (
-        <div className="flex flex-col min-h-screen bg-white">
+        <div className="flex flex-col min-h-screen bg-orange-100">
             <div className="sticky z-50 top-0 flex overflow-hidden flex-col w-full ">
                 <NavigationMenu />
             </div>

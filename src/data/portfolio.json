@@ -99,13 +99,19 @@
     ],
     "fullstack": [
         {
-            "slug": "ledgerly",
-            "name": "Ledgerly",
-            "company": "Earthstorm Media",
-            "role": "Lead Full Stack Developer",
+            "slug": "liga",
+            "name": "Liga",
+            "company": "Webbed Global",
+            "role": "Co-founder & Developer",
             "date": "2025-02-01",
-            "image": "/img/portfolio/ledgerly.svg",
-            "tools": ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Stripe"],
+            "image": "/img/portfolio/liga-card.jpg",
+            "tools": [
+                "Next.js",
+                "TypeScript",
+                "PostgreSQL",
+                "Prisma",
+                "Stripe"
+            ],
             "summary": "Invoicing and bookkeeping platform for UK small businesses.",
             "overview": "Ledgerly helps sole traders and small businesses send invoices, track expenses and prepare for Making Tax Digital. I led the build from architecture to launch, owning the API, the billing integration and the dashboard UI.",
             "highlights": [
@@ -113,15 +119,15 @@
                 "Row-level security on a multi-tenant PostgreSQL schema",
                 "Lighthouse performance score above 95 on key pages"
             ],
-            "link": "https://example.com"
+            "link": "https://liga-app.com"
         },
         {
-            "slug": "routewise",
-            "name": "RouteWise",
-            "company": "Quantum Logistics",
+            "slug": "quantum",
+            "name": "Quantum Website",
+            "company": "Quantum",
             "role": "Full Stack Developer",
             "date": "2024-07-01",
-            "image": "/img/portfolio/routewise.svg",
+            "image": "/img/portfolio/quantum-card.png",
             "tools": ["React", "Node.js", "Express", "MongoDB", "Mapbox"],
             "summary": "Delivery route planning and live driver tracking.",
             "overview": "A dispatch tool that plans multi-stop delivery routes and shows live driver locations. I built the route optimisation service and the real-time map view used by dispatchers.",
@@ -130,15 +136,15 @@
                 "Route optimisation reduced average mileage by 11%",
                 "Offline-first driver app with background sync"
             ],
-            "link": "https://example.com"
+            "link": "https://wearequantum.com"
         },
         {
-            "slug": "clinicq",
-            "name": "ClinicQ",
-            "company": "Cinolla",
-            "role": "Frontend Lead",
+            "slug": "charlesfox",
+            "name": "Charles Fox",
+            "company": "Quantum",
+            "role": "Full Stack Developer",
             "date": "2023-10-01",
-            "image": "/img/portfolio/clinicq.svg",
+            "image": "/img/portfolio/charlesfox-card.png",
             "tools": ["Vue", "Nuxt", "Tailwind CSS", "Firebase"],
             "summary": "Patient queueing and appointment check-in for clinics.",
             "overview": "ClinicQ replaces paper sign-in sheets with a QR-code check-in and live queue display. I led the frontend, designed the component library and made the patient flow fully accessible.",
@@ -150,12 +156,12 @@
             "link": "https://example.com"
         },
         {
-            "slug": "brightboard",
-            "name": "BrightBoard",
-            "company": "QodeHub",
+            "slug": "jackrabbit",
+            "name": "Jack Rabbit Rewards Portal",
+            "company": "Quantum",
             "role": "Full Stack Developer",
             "date": "2023-03-01",
-            "image": "/img/portfolio/brightboard.svg",
+            "image": "/img/portfolio/jr-card.png",
             "tools": ["React", "GraphQL", "Apollo", "Python", "Django"],
             "summary": "Learning management dashboard for coding bootcamps.",
             "overview": "BrightBoard gives bootcamp students and mentors one place for assignments, feedback and progress tracking. I built the GraphQL API and the mentor review workflow.",
@@ -169,10 +175,10 @@
         {
             "slug": "borderless",
             "name": "Borderless",
-            "company": "Side project",
+            "company": "Webbed Global",
             "role": "Founder & Developer",
             "date": "2025-08-01",
-            "image": "/img/portfolio/borderless.svg",
+            "image": "/img/portfolio/borderless-card.jpg",
             "tools": ["React Native", "Expo", "Supabase", "OpenAI API"],
             "summary": "Immigration guidance app that helps newcomers settle in faster.",
             "overview": "Borderless turns confusing immigration information into clear, step-by-step guidance. It uses an LLM assistant grounded in official sources, with guardrails I designed so it says when it doesn't know.",
@@ -181,15 +187,15 @@
                 "Guardrails and evaluation suite for the AI assistant",
                 "Personalised checklists for visas and settling in"
             ],
-            "link": "https://borderless.app"
+            "link": "https://borderless.webbedglobal.co.uk/"
         },
         {
-            "slug": "stockpulse",
-            "name": "StockPulse",
-            "company": "NCA Retail",
-            "role": "Backend Developer",
+            "slug": "focalpoint",
+            "name": "FocalPoint Fires Shopify App",
+            "company": "Earthstorm Media",
+            "role": "Full Stack Developer",
             "date": "2022-06-01",
-            "image": "/img/portfolio/stockpulse.svg",
+            "image": "/img/portfolio/focalpoint-card.jpg",
             "tools": ["Node.js", "NestJS", "Redis", "AWS", "Docker"],
             "summary": "Inventory forecasting and low-stock alerts for retail stores.",
             "overview": "StockPulse forecasts demand per store and alerts managers before items run out. I built the ingestion pipeline and alerting service, and containerised the stack on AWS.",

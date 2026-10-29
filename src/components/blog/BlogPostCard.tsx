@@ -1,35 +1,54 @@
-import Image from 'next/image'
-import { blogPosts } from '@/data/blog'
-import Link from 'next/link'
+"use client"
+import { motion } from "motion/react"
+import Image from "next/image"
+import Link from "next/link"
+import { staggerChildFadeUp } from "@/motion"
+import { formatPostDate, type BlogPost } from "@/data/blog"
+import Tag from "@/components/portfolio/Tag"
 
 type BlogPostCardProps = {
-    post: (typeof blogPosts)[number]
+    post: BlogPost
 }
 
 function BlogPostCard({ post }: BlogPostCardProps) {
     return (
-        <Link href={`/blog/${post.id}`} className="w-full flex flex-col">
-            <div className="w-full h-96 border border-orange-600 relative p-2">
-                <div className="w-full h-full bg-orange-200 relative">
-                    <Image
-                        src={post.imageUrl}
-                        alt={post.title}
-                        fill
-                        style={{
-                            objectFit: 'cover',
-                            objectPosition: 'center',
-                        }}
-                        className="object-cover grayscale-100 hover:grayscale-60 transition-all"
-                    />
-                    <div className="absolute w-full h-full bg-linear-to-br from-black/80 via-black/50 to-transparent"></div>
+        <motion.li variants={staggerChildFadeUp} className="w-full">
+            <Link
+                href={`/blog/${post.slug}`}
+                className="group w-full flex flex-col"
+            >
+                <motion.div
+                    whileHover={{ y: -6 }}
+                    transition={{ duration: 0.3 }}
+                    className="w-full aspect-[3/2] border border-orange-600 p-2"
+                >
+                    <div className="w-full h-full bg-orange-200 relative overflow-hidden">
+                        <Image
+                            src={post.image}
+                            alt={post.title}
+                            fill
+                            sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                            className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+                        />
+                    </div>
+                </motion.div>
+                <div className="flex justify-between items-baseline gap-4 pt-4">
+                    <h3 className="text-2xl font-bold group-hover:text-orange-600 transition-colors">
+                        {post.title}
+                    </h3>
+                    <span className="text-gray-700 whitespace-nowrap">
+                        {post.readTime} MIN READ
+                    </span>
                 </div>
-            </div>
-
-            <div className="flex justify-between font-bold py-2">
-                <h1>{post.title}</h1>
-                <h1>{post.readTime} MIN READ</h1>
-            </div>
-        </Link>
+                <p className="text-gray-700 pt-1">{post.subtitle}</p>
+                <div className="flex flex-wrap items-center gap-3 pt-3">
+                    <Tag variant="solid">{post.type}</Tag>
+                    <span className="text-sm text-gray-600">
+                        {formatPostDate(post.date)}
+                    </span>
+                </div>
+            </Link>
+        </motion.li>
     )
 }
 

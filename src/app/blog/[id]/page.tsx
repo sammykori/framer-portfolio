@@ -1,91 +1,164 @@
-"use client"
+import type { Metadata } from "next"
 import Image from "next/image"
-import { useParams } from "next/navigation"
-import { blogPosts } from "@/data/blog"
-import { Icon } from "@iconify/react"
 import Link from "next/link"
-import Content from "@/components/blog/Content"
+import { notFound } from "next/navigation"
+import * as motion from "motion/react-client"
+import { Icon } from "@iconify/react"
+import { staggerParent, staggerChildFadeUp } from "@/motion"
+import { formatPostDate } from "@/data/blog"
+import { getAllPosts, getPost } from "@/lib/blog"
+import Markdown from "@/components/blog/Markdown"
+import CommentForm from "@/components/blog/CommentForm"
+import Tag from "@/components/portfolio/Tag"
 
-function Home() {
-    const params = useParams()
-    const postId = params.id
-    const post = blogPosts.find(
-        (post) => post.id === parseInt(postId?.toString() || "")
-    )
-    if (!post) {
-        return <div>Post not found</div>
-    }
-    return (
-        <div className="w-full max-w-3xl mx-auto font-nixie pb-20">
-            <header className="flex flex-col px-4 md:py-10 gap-10">
-                <div className="">
-                    <h1 className="text-3xl md:text-4xl py-4">{post.title}</h1>
-                    <h2 className="text-lg md:text-xl text-gray-600 pb-6">
-                        {post.subtitle}
-                    </h2>
-                </div>
-                <div className="w-full flex flex-row items-center gap-4 pb-10">
-                    <div className="size-20 border rounded-full relative ">
-                        <Image
-                            src="/img/main_img.png"
-                            alt="Sammy Kori"
-                            fill
-                            style={{
-                                objectFit: "cover",
-                                objectPosition: "10% -50%",
-                            }}
-                            className="rounded-full"
-                        />
-                    </div>
-                    <div>
-                        <h1 className="font-bold">Sammy Kori</h1>
-                        <div className="text-gray-600">
-                            {post.date} · {post.readTime} read
-                        </div>
-                    </div>
-                </div>
-            </header>
-            <section className="w-full h-96 bg-gray-200 relative">
-                <Image
-                    src={post.imageUrl}
-                    alt={post.title}
-                    fill
-                    style={{
-                        objectFit: "cover",
-                        objectPosition: "center",
-                    }}
-                    className="object-cover grayscale-100 hover:grayscale-60 transition-all"
-                />
-                <div className="absolute w-full h-full bg-linear-to-br from-black/80 via-black/50 to-transparent"></div>
-            </section>
-            <Content postId={post.id} />
+type Props = { params: Promise<{ id: string }> }
 
-            <section className="w-full bg-gray-100 flex flex-col items-center justify-center gap-4 px-4 py-10">
-                <h1 className="font-bold text-2xl">
-                    Enjoyed the Read? Share Your Thoughts!
-                </h1>
-                <p className="text-gray-600">
-                    If you found value in this post, consider sharing it with
-                    others or leaving a comment in my inbox. Your feedback fuels
-                    our passion for creating meaningful content.
-                </p>
-                <div className="flex flex-row items-center gap-6 pt-4">
-                    <Link href="mailto:sammykori72@gmail.com">
-                        <Icon
-                            icon="material-icon-theme:email"
-                            className="text-2xl"
-                        />
-                    </Link>
-                    <Link href="https://www.linkedin.com/in/samuelkori/">
-                        <Icon
-                            icon="skill-icons:linkedin"
-                            className="text-2xl"
-                        />
-                    </Link>
-                </div>
-            </section>
-        </div>
-    )
+export const dynamicParams = false
+
+export function generateStaticParams() {
+    return getAllPosts().map((post) => ({ id: post.slug }))
 }
 
-export default Home
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const post = getPost((await params).id)
+    return post
+        ? { title: `${post.title} | Sammy Kori`, description: post.subtitle }
+        : { title: "Not found" }
+}
+
+export default async function BlogPostPage({ params }: Props) {
+    const post = getPost((await params).id)
+    if (!post) notFound()
+
+    return (
+        <main className="flex-1 w-full bg-orange-100 font-nixie px-4 md:px-20 pb-20">
+            <motion.article
+                variants={staggerParent}
+                initial="hidden"
+                animate="visible"
+                className="w-full max-w-4xl mx-auto flex flex-col gap-10 py-10 md:py-16"
+            >
+                <motion.div variants={staggerChildFadeUp}>
+                    <Link
+                        href="/blog"
+                        className="inline-flex items-center gap-2 hover:text-orange-600 transition-colors"
+                    >
+                        <Icon icon="mdi:arrow-left" /> BACK TO BLOG
+                    </Link>
+                </motion.div>
+
+                <motion.header
+                    variants={staggerChildFadeUp}
+                    className="flex flex-col gap-4"
+                >
+                    <div>
+                        <Tag variant="solid">{post.type.toUpperCase()}</Tag>
+                    </div>
+                    <h1 className="text-3xl md:text-6xl font-bold">
+                        {post.title}
+                    </h1>
+                    <p className="text-lg md:text-2xl text-gray-700">
+                        {post.subtitle}
+                    </p>
+                </motion.header>
+
+                <motion.dl
+                    variants={staggerChildFadeUp}
+                    className="grid grid-cols-2 md:grid-cols-3 gap-6 border-y border-orange-600 py-6"
+                >
+                    <div className="col-span-2 md:col-span-1 flex items-center gap-3">
+                        <div className="size-12 border border-orange-600 rounded-full relative shrink-0">
+                            <Image
+                                src="/img/main_img.png"
+                                alt="Sammy Kori"
+                                fill
+                                sizes="48px"
+                                style={{ objectPosition: "10% -50%" }}
+                                className="rounded-full object-cover"
+                            />
+                        </div>
+                        <div className="flex flex-col gap-1">
+                            <dt className="text-xs tracking-widest text-gray-600">
+                                AUTHOR
+                            </dt>
+                            <dd className="font-bold">Sammy Kori</dd>
+                        </div>
+                    </div>
+                    <div className="flex flex-col gap-1">
+                        <dt className="text-xs tracking-widest text-gray-600">
+                            DATE
+                        </dt>
+                        <dd className="font-bold">
+                            {formatPostDate(post.date)}
+                        </dd>
+                    </div>
+                    <div className="flex flex-col gap-1">
+                        <dt className="text-xs tracking-widest text-gray-600">
+                            READ TIME
+                        </dt>
+                        <dd className="font-bold">{post.readTime} min</dd>
+                    </div>
+                </motion.dl>
+
+                <motion.div
+                    variants={staggerChildFadeUp}
+                    className="w-full aspect-[3/2] border border-orange-600 p-2"
+                >
+                    <div className="w-full h-full bg-orange-200 relative">
+                        <Image
+                            src={post.image}
+                            alt={post.title}
+                            fill
+                            priority
+                            sizes="(min-width: 896px) 896px, 100vw"
+                            className="object-cover object-top"
+                        />
+                    </div>
+                </motion.div>
+
+                <motion.div variants={staggerChildFadeUp}>
+                    <Markdown content={post.content} />
+                </motion.div>
+
+                <motion.section
+                    variants={staggerChildFadeUp}
+                    className="flex flex-col gap-4 border-t border-orange-600 pt-10"
+                >
+                    <span className="text-sm tracking-widest text-orange-600">
+                        ENJOYED THE READ?
+                    </span>
+                    <h2 className="text-2xl md:text-4xl font-bold">
+                        Share your thoughts
+                    </h2>
+                    <p className="text-lg text-gray-700">
+                        If you found value in this post, consider sharing it
+                        with others or leaving a comment below. It comes
+                        straight to my inbox, and your feedback fuels my passion
+                        for creating meaningful content.
+                    </p>
+                    <div className="flex flex-row items-center gap-6 pb-4">
+                        <Link
+                            href="mailto:sammykori72@gmail.com"
+                            aria-label="Email"
+                        >
+                            <Icon
+                                icon="material-icon-theme:email"
+                                className="text-2xl"
+                            />
+                        </Link>
+                        <Link
+                            href="https://www.linkedin.com/in/samuelkori/"
+                            aria-label="LinkedIn"
+                        >
+                            <Icon
+                                icon="skill-icons:linkedin"
+                                className="text-2xl"
+                            />
+                        </Link>
+                    </div>
+                    <CommentForm slug={post.slug} />
+                </motion.section>
+            </motion.article>
+        </main>
+    )
+}
